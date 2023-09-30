@@ -2,14 +2,19 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Tickets {
     public static int[] ints = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     public static List<String> names = new ArrayList<>(List.of("Owa", "Sasha", "Dasha", "Pavel", "Roman", "Dima", "Aleksey"));
+    public static String string = "ommmoor";
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(task2_1(ints)));
+        int mid = string.length() / 2;
+        String[] parts = {string.substring(0, mid), string.substring(mid)};
+        System.out.println(parts[0]);
+        System.out.println(parts[1]);
     }
 
     /* Все четные числа увеличиваем на единицу. Возвращаем кусок списка с 3-го по 7-й элемент. */
@@ -56,4 +61,21 @@ public class Tickets {
         }
         return ints;
     }
+
+    /* через коллекции */
+    public static Integer[] task2_2(Integer[] integers) {
+        Collections.reverse(Arrays.asList(integers));
+        return integers;
+    }
+    /* является ли строка палиндромом */
+    public static boolean task3(String s) {
+        int n = s.length();
+        for (int i = 0; i < n / 2; i++) {
+            if (s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
