@@ -78,4 +78,8 @@ public class Tickets {
         return true;
     }
 
+    public void task7() {
+
+    }
+
 }
