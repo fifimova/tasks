@@ -1,5 +1,9 @@
 package org.example;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,10 +15,7 @@ public class Tickets {
     public static String string = "ommmoor";
 
     public static void main(String[] args) {
-        int mid = string.length() / 2;
-        String[] parts = {string.substring(0, mid), string.substring(mid)};
-        System.out.println(parts[0]);
-        System.out.println(parts[1]);
+        task7(string);
     }
 
     /* Все четные числа увеличиваем на единицу. Возвращаем кусок списка с 3-го по 7-й элемент. */
@@ -78,8 +79,18 @@ public class Tickets {
         return true;
     }
 
-    public void task7() {
-
+    /* перехват и обработка исключения */
+    public static void task7(String file) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String s = reader.readLine();
+        } catch (FileNotFoundException e) {
+            System.out.println("Файла не существует");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Ошибка при вводе/выводе данных");
+            e.printStackTrace();
+        }
     }
 
 }
