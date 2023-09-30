@@ -1,0 +1,16 @@
+/* является ли строка палиндромом */
+
+int n = s.length();
+for(int i = 0; i < n/2; i++){
+    if(s.charAt(i) != s.charAt(n - 1 - i){
+     return false;
+ }
+}
+return true
+
+/* Напишите программу в текстовом редакторе, которая разделяет любую строку на две части. */
+int mid = string.length() / 2;
+String[] parts = {string.substring(0, mid), string.substring(mid)};
+System.out.println(parts[0])
+System.out.println(parts[1])
+
