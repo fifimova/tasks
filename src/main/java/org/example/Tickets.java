@@ -15,7 +15,6 @@ public class Tickets {
     public static String string = "ommmoor";
 
     public static void main(String[] args) {
-        task7(string);
     }
 
     /* Все четные числа увеличиваем на единицу. Возвращаем кусок списка с 3-го по 7-й элемент. */
@@ -77,20 +76,6 @@ public class Tickets {
             }
         }
         return true;
-    }
-
-    /* перехват и обработка исключения */
-    public static void task7(String file) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String s = reader.readLine();
-        } catch (FileNotFoundException e) {
-            System.out.println("Файла не существует");
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.out.println("Ошибка при вводе/выводе данных");
-            e.printStackTrace();
-        }
     }
 
 }

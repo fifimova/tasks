@@ -1,7 +1,5 @@
 package org.example;
 
-import com.sun.source.tree.BreakTree;
-
 import java.util.Objects;
 
 public class Student {
