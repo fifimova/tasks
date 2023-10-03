@@ -1,20 +1,44 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Tickets {
     public static int[] ints = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    public static List<String> names = new ArrayList<>(List.of("Owa", "Sasha", "Dasha", "Pavel", "Roman", "Dima", "Aleksey"));
+    public static String[] strings = {"Owa", "Sasha", "Sasha", "Pavel", "Roman", "Dima", "Aleksey"};
+    public static List<String> names = new ArrayList<>(List.of("Owa", "Sasha", "Sasha", "Pavel", "Roman", "Dima", "Aleksey"));
     public static String string = "ommmoor";
+    public static String[][] books = {{"Мастер и Маргарита", "М. А. Булгаков"}, {"Облачный Атлас", "Дэвид Митчелл"}, {"Маленькие женщины", "Луиза Мэй Скотт"}};
 
     public static void main(String[] args) {
+        System.out.println(Arrays.toString(task12(books)));
+    }
+
+    /* Дан массив пар названий книг и авторов, необходимо привести каждую пару в строку вида: «Название книги» И.О. Автора */
+    public static String[] task12(String[][] str) {
+        StringBuilder result = new StringBuilder();
+        for (String[] part : str) {
+            String book = part[0];
+            String author = part[1];
+            result.append("\"").append(book).append("\" ").append(author).append(", ");
+        }
+        String output = result.toString();
+        output = output.substring(0, output.length() - 2);
+        // вернет строку книга-автор через запятую
+//        return output;
+
+        // вернет массив книга-автор
+        String[] bookAuthorArray = output.split(", ");
+        return bookAuthorArray;
+    }
+
+    /* Дан массив строк, необходимо удалить из него все дубли, оставшиеся строки объединить в одну в порядке следования в массиве. */
+    public static String task11(String[] str) {
+        Set<String> set = Arrays.stream(str).collect(Collectors.toSet());
+        List<String> result = new ArrayList<>(set);
+        return result.stream()
+                .sorted()
+                .collect(Collectors.joining(" "));
     }
 
     /* Все четные числа увеличиваем на единицу. Возвращаем кусок списка с 3-го по 7-й элемент. */
@@ -67,6 +91,7 @@ public class Tickets {
         Collections.reverse(Arrays.asList(integers));
         return integers;
     }
+
     /* является ли строка палиндромом */
     public static boolean task3(String s) {
         int n = s.length();
