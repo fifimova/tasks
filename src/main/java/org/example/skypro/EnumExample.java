@@ -1,4 +1,4 @@
-package org.example;
+package org.example.skypro;
 
 public enum EnumExample {
     MONDAY("Monday", "Понедельник"),

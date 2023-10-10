@@ -1,4 +1,4 @@
-package org.example;
+package org.example.skypro;
 
 public class RandomException extends Exception{
     public RandomException() {
