@@ -42,7 +42,7 @@ public class Tickets {
     }
 
     /* Все четные числа увеличиваем на единицу. Возвращаем кусок списка с 3-го по 7-й элемент. */
-    public static int[] changeArray(int[] ints) {
+    public static int[] task15(int[] ints) {
         for (int i = 0; i < ints.length; i++) {
             if (ints[i] % 2 == 0) {
                 ints[i]++;
@@ -102,5 +102,4 @@ public class Tickets {
         }
         return true;
     }
-
 }

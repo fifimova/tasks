@@ -37,21 +37,19 @@ public class Task13 {
     public static Map<Integer, List<String>> distributeBooks(List<String> bookTitles) {
         int numBooks = bookTitles.size();
         int booksPerShelf = numBooks / SHELVES_AMOUNT;
-        int remainingBooks = numBooks % SHELVES_AMOUNT;
-
+        int reminders = numBooks % SHELVES_AMOUNT;
         Collections.sort(bookTitles);
 
-        Map<Integer, List<String>> shelves = new HashMap<>();
+        Map<Integer, List<String>> bookCase = new HashMap<>();
 
-        int startIndex = 0;
+        int startInx = 0;
         for (int i = 0; i < SHELVES_AMOUNT; i++) {
-            int shelfSize = booksPerShelf + (i < remainingBooks ? 1 : 0);
-            List<String> shelf = bookTitles.subList(startIndex, startIndex + shelfSize);
-            shelves.put(i + 1, shelf);
-            startIndex += shelfSize;
+            int shelfSize = booksPerShelf + (i < reminders ? 1 : 0);
+            List<String> shelf = bookTitles.subList(startInx, startInx + shelfSize);
+            bookCase.put(i + 1, shelf);
+            startInx += shelfSize;
         }
-
-        return shelves;
+        return bookCase;
     }
 
 }
