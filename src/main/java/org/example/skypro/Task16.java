@@ -20,8 +20,7 @@ public class Task16 {
     static void copyFile(String sourcePath, String targetPath) throws IOException {
         File sourceFile = new File(sourcePath);
         File targetFile = new File(targetPath);
-
-
+        
         try (InputStream in = new FileInputStream(sourceFile);
              OutputStream op = new FileOutputStream(targetFile)) {
             byte[] buffer = new byte[1024];
