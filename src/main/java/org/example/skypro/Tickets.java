@@ -11,7 +11,7 @@ public class Tickets {
     public static String[][] books = {{"Мастер и Маргарита", "М. А. Булгаков"}, {"Облачный Атлас", "Дэвид Митчелл"}, {"Маленькие женщины", "Луиза Мэй Скотт"}};
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(task12(books)));
+
     }
 
     /* Дан массив пар названий книг и авторов, необходимо привести каждую пару в строку вида: «Название книги» И.О. Автора */
@@ -101,5 +101,14 @@ public class Tickets {
             }
         }
         return true;
+    }
+
+    static void bar() {
+        int[] nums = {1, 2, 3};
+        int x;
+        for ( x = 0; x < nums.length; x++ ) {
+            x += nums[x];
+        }
+        System.out.println(x);
     }
 }
