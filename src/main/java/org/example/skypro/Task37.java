@@ -12,6 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/* Дан класс Car и Upgrade. У Car есть поле id и upgrades(List<Upgrade>).
+У Upgrade есть id и name. Так же есть 2 excel таблицы car и upgrade.
+В таблице car колонка upgrades заполняется в формате id1,id2,id3.
+Напишите программу которая будет читать таблицы и на основе этого сформирует List объектов Car которые будут содержать
+нужные апргрейды из таблицы . */
 public class Task37 {
 
     static List<Car> cars = new ArrayList<>();
